@@ -10,16 +10,17 @@ new Swiper ('.swiper', {
   effect: 'coverflow',
 });
 
+let sound = document.createElement('audio');
+sound.setAttribute('src' , 'музыка.wav');
 let cap = document.querySelector('.box-cap');
 let capButton = document.querySelector('#capButton');
 let box = document.querySelector('.box');
 capButton.onclick = function() {
   cap.classList.add('cap_open');
   box.classList.add('box_open');
+    sound.play();
 }
-let sound = document.createElement('audio');
-sound.setAttribute('src' , 'музыка.wav');
+
 setTimeout(() => {
   document.querySelector('.wrapper').classList.add('wrapper_hide');
-  sound.play();
 }, 3000);
